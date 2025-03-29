@@ -110,6 +110,8 @@ B) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -60
 C) analisarCredito1() exibirá: 'Seu crédito foi negado. Saldo disponível: -200.', enquanto analisarCredito2() exibirá: 'Seu crédito foi aprovado. Saldo disponível: 100.'
 
 D) Ambas as funções exibirão: 'Seu crédito foi aprovado Saldo disponível: 500.'
+
+```R: A resposta correta é a letra a)```
 ______
 
 **3)** Considere o seguinte trecho de código em JavaScript:
@@ -134,6 +136,8 @@ B) O código verifica se a idade pertence à faixa adulta. Se for, exibe "Você 
 C) O código verifica se a idade está entre 18 e 60 anos e, se for, imprime "Você é um adulto!". Se não estiver nesse intervalo, imprime "Você está na melhor idade!".
 
 D) O código verifica se a idade é menor de 18, entre 18 e 60 ou acima de 60, imprimindo uma mensagem específica para cada caso.
+
+```R: A alternativa correta é a letra B)```
 ______
 
 **4)** Qual será o resultado impresso no console após a execução do seguinte código?
@@ -203,6 +207,7 @@ Dispositivo 4 não pode ser ligado. Energia insuficiente.
 
 Dispositivo 5 não pode ser ligado. Energia insuficiente.
 
+```R: A resposta correta está na alternativa D)```
 ______
 
 **5)** Qual é a principal função do método update() em um jogo desenvolvido com Phaser.js?
@@ -216,6 +221,8 @@ B) O método update() é chamado continuamente a cada quadro (frame) do jogo, se
 C) O método update() renderiza todos os sprites na tela e garante que a física do jogo seja processada corretamente.
 
 D) O método update() é chamado apenas uma vez após a criação da cena, sendo utilizado para configurar variáveis iniciais do jogo.
+
+```R: a alternativa correta é a letra B)```
 ______
 
 **6)** Qual é o principal objetivo do módulo Matter.js Physics em Phaser.js?
@@ -230,6 +237,7 @@ C) Renderizar gráficos otimizados para jogos 2D e garantir uma taxa de quadros 
 
 D) Criar animações automáticas para sprites e objetos interativos sem necessidade de programação de movimentação.
 
+```R: A alternativa correta é a letra A)```
 ______
 
 # Questões dissertativas
@@ -245,6 +253,20 @@ Pedidos entre R$50,00 e R$199,99 (inclusive) → "Frete com custo adicional!"
 Pedidos de R$200,00 ou mais → "Frete grátis!"
 ```
 Implemente um pseudocódigo que receba o valor total da compra e exiba a classificação correta do frete para o cliente.
+
+``` JavaScript
+Resposta:
+Receba a variável valorTotal como entrada do usuário
+
+Variável valorTotal = x
+
+se x < 50 então
+    exiba "Frete não disponível!";  
+se x >= 50 ou x <= 199.99 então
+    exiba "Frete com custo adicional!";
+se x >= 200 então
+    exiba "Frete grátis!";
+```
 ______
 
 **8)** Considere a implementação da classe base Veiculo em um sistema de modelagem de veículos. Sua tarefa é implementar, utilizando pseudocódigo, as classes derivadas Carro e Moto, que herdam da classe Veiculo, adicionando atributos específicos e métodos para calcular o consumo de combustível de um carro e de uma moto, respectivamente.
@@ -262,6 +284,68 @@ Método CalcularConsumo():
 ```
 Implementação genérica para cálculo de consumo, a ser sobrescrita pelas subclasses.
 Agora, implemente as classes Carro e Moto, garantindo que ambas herdem de Veiculo e possuam métodos específicos para calcular o consumo de combustível com base na quilometragem e eficiência do veículo.
+
+``` javascript
+Resposta:
+// Classe base Veiculo
+ALGORITMO Veiculo
+    INICIO
+        VARIAVEL modelo
+        VARIAVEL ano
+        
+        FUNÇÃO Construtor(modelo, ano)
+            ESTE.modelo <- modelo
+            ESTE.ano <- ano
+        FIM FUNÇÃO
+        
+        FUNÇÃO CalcularConsumo()
+            ESCREVER "Modelo: ", ESTE.modelo, ", Ano: ", ESTE.ano
+        FIM FUNÇÃO
+    FIM ALGORITMO
+
+// Classe Carro herdando de Veiculo
+ALGORITMO Carro HERDA Veiculo
+    INICIO
+        VARIAVEL quilometragem
+        VARIAVEL eficiencia
+        
+        FUNÇÃO Construtor(modelo, ano, quilometragem, eficiencia)
+            CHAMAR SUPER(modelo, ano)
+            ESTE.quilometragem <- quilometragem
+            ESTE.eficiencia <- eficiencia
+        FIM FUNÇÃO
+        
+        FUNÇÃO CalcularConsumo()
+            VARIAVEL consumo <- ESTE.quilometragem / ESTE.eficiencia
+            ESCREVER "O carro ", ESTE.modelo, " consome aproximadamente ", ARREDONDAR(consumo, 2), " litros de combustível para ", ESTE.quilometragem, " km."
+        FIM FUNÇÃO
+    FIM ALGORITMO
+
+// Classe Moto herdando de Veiculo
+ALGORITMO Moto HERDA Veiculo
+    INICIO
+        VARIAVEL quilometragem
+        VARIAVEL eficiencia
+        
+        FUNÇÃO Construtor(modelo, ano, quilometragem, eficiencia)
+            CHAMAR SUPER(modelo, ano)
+            ESTE.quilometragem <- quilometragem
+            ESTE.eficiencia <- eficiencia
+        FIM FUNÇÃO
+        
+        FUNÇÃO CalcularConsumo()
+            VARIAVEL consumo <- ESTE.quilometragem / ESTE.eficiencia
+            ESCREVER "A moto ", ESTE.modelo, " consome aproximadamente ", ARREDONDAR(consumo, 2), " litros de combustível para ", ESTE.quilometragem, " km."
+        FIM FUNÇÃO
+    FIM ALGORITMO
+
+// Criando instâncias das classes e testando os métodos
+VARIAVEL carro <- NOVO Carro("Honda Fit", 2010, 500, 12)
+CHAMAR carro.CalcularConsumo()
+
+VARIAVEL moto <- NOVO Moto("Yamaha XJ6", 2015, 300, 20)
+CHAMAR moto.CalcularConsumo()
+```
 ______
 
 **9)** Você é um cientista da NASA e está ajudando no desenvolvimento de um sistema de pouso para sondas espaciais em Marte. Seu objetivo é calcular o tempo necessário para que a sonda reduza sua velocidade até um nível seguro para pouso, considerando uma velocidade inicial de entrada na atmosfera marciana e uma taxa de desaceleração constante causada pelo atrito atmosférico e retrofoguetes.
@@ -275,6 +359,50 @@ Considere a fórumla de atualização velocidade:
     velocidade = velocidadeInicial - desaceleracao * tempo
 ```
 Seu programa deve determinar quanto tempo será necessário para que a sonda atinja uma velocidade segura de pouso, sem ultrapassar os limites estabelecidos.
+
+``` javascript
+Resposta:
+// Simulação de pouso da sonda em Marte
+ALGORITMO SimulacaoPousoSonda
+    INICIO
+        VARIAVEL velocidadeInicial
+        VARIAVEL desaceleracao
+        VARIAVEL velocidadeSegura
+        VARIAVEL tempoMaximo
+        VARIAVEL tempo <- 0
+        
+        ESCREVER "Digite a velocidade inicial da sonda (m/s): "
+        LER velocidadeInicial
+        
+        ESCREVER "Digite a taxa de desaceleração (m/s²): "
+        LER desaceleracao
+        
+        ESCREVER "Digite a velocidade segura de pouso (m/s): "
+        LER velocidadeSegura
+        
+        ESCREVER "Digite o tempo máximo permitido para a descida (s): "
+        LER tempoMaximo
+        
+        VARIAVEL velocidade <- velocidadeInicial
+        
+        ENQUANTO velocidade > velocidadeSegura E tempo < tempoMaximo FAZER
+            velocidade <- velocidadeInicial - (desaceleracao * tempo)
+            SE velocidade <= velocidadeSegura ENTAO
+                ESCREVER "A sonda atingiu uma velocidade segura em ", tempo, " segundos."
+                PARAR
+            FIM SE
+            
+            tempo <- tempo + 1
+        FIM ENQUANTO
+        
+        SE velocidade > velocidadeSegura ENTAO
+            ESCREVER "A sonda não conseguiu reduzir a velocidade a tempo."
+        FIM SE
+    FIM ALGORITMO
+
+// Execução da simulação
+CHAMAR SimulacaoPousoSonda()
+```
 ______
 
 **10)** Em um sistema de análise financeira, as operações de investimento de uma empresa podem ser representadas por matrizes, onde cada linha representa um tipo de investimento e cada coluna representa um período de tempo.
@@ -307,3 +435,41 @@ Escrever("Total de investimentos acumulados:")
 ImprimirMatriz(totalInvestimentos)  
 ```
 Agora, implemente a função MultiplicarMatrizesInvestimento(matrizA, matrizB), que multiplica as duas matrizes, simulando o efeito de diferentes fatores de crescimento e impacto financeiro nos investimentos ao longo do tempo.
+
+``` javascript
+// Multiplicação de matrizes de investimento 
+ALGORITMO MultiplicarMatrizesInvestimento
+    INICIO
+        VARIAVEL matrizA
+        VARIAVEL matrizB
+        VARIAVEL linhasA <- tamanho(matrizA)
+        VARIAVEL colunasA <- tamanho(matrizA[0])
+        VARIAVEL linhasB <- tamanho(matrizB)
+        VARIAVEL colunasB <- tamanho(matrizB[0])
+        
+        SE colunasA <> linhasB ENTAO
+            ESCREVER "As matrizes não podem ser multiplicadas. Dimensões incompatíveis."
+            PARAR
+        FIM SE
+        
+        VARIAVEL matrizResultado <- novaMatriz(linhasA, colunasB)
+        
+        PARA i <- 0 ATÉ linhasA - 1 FAÇA
+            PARA j <- 0 ATÉ colunasB - 1 FAÇA
+                matrizResultado[i][j] <- 0
+                PARA k <- 0 ATÉ colunasA - 1 FAÇA
+                    matrizResultado[i][j] <- matrizResultado[i][j] + (matrizA[i][k] * matrizB[k][j])
+                FIM PARA
+            FIM PARA
+        FIM PARA
+        
+        RETORNAR matrizResultado
+    FIM ALGORITMO
+
+// Exemplo de uso
+VARIAVEL investimentosAno1 <- [[1000, 2000], [1500, 2500]]
+VARIAVEL investimentosAno2 <- [[1.1, 1.2], [0.9, 1.3]]
+VARIAVEL resultado <- MultiplicarMatrizesInvestimento(investimentosAno1, investimentosAno2)
+ESCREVER "Resultado da multiplicação das matrizes de investimento:"
+IMPRIMIR matrizResultado 
+```
